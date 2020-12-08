@@ -1,0 +1,30 @@
+/*=======================
+Section Title
+====================== */
+
+.util-ttl {
+    font-size: $fz-6l;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    padding-bottom: 16px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 60px;
+        height: 1px;
+        background-color: $main-color;
+    }
+
+    @include mq("sp") {
+        font-size: $fz-5l;
+    }
+}
+
+.contact__ttl {
+    color: $main-color;
+}

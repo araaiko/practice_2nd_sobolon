@@ -1,0 +1,23 @@
+/*=======================
+inner
+====================== */
+
+.inner {
+    // 実質1200pxのインナー幅になるようにしています
+    width: 100%;
+    max-width: 1280px; //適宜指定
+    margin: 0 auto;
+    height: inherit;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    // @include mq("tab") {
+    //     padding-left: 24px;
+    //     padding-right: 24px;
+    // }
+
+    @include mq("sp") {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

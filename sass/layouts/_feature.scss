@@ -1,0 +1,62 @@
+/*=======================
+Feature
+====================== */
+
+.feature__card-items {
+    margin-top: 64px;
+    display: flex;
+
+    @include mq("sp") {
+        display: block;
+        margin-top: 48px;
+    }
+}
+
+.feature__card-item {
+    width: calc(100% / 3 - 90px * 2 / 3);
+    max-width: 340px;
+    box-shadow: 3px 3px 15px 0 $shadow-color;
+
+    @include mq("sp") {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &:nth-child(n + 2) {
+        margin-left: 90px;
+
+        @include mq("sp") {
+            margin: 48px auto 0;
+        }
+    }
+}
+
+.feature__card-item-link {
+    display: inline-block;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.feature__card-item-img {
+    overflow: hidden;
+
+    img {
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.feature__card-item-content {
+    padding: 32px 0;
+}
+
+.feature__card-item-txt {
+    text-align: center;
+    font-weight: bold;
+    line-height: (27 / 16);
+}

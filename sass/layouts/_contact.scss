@@ -1,0 +1,316 @@
+/*=======================
+Contact
+====================== */
+.contact {
+    background: transparent url("../img/contact.png") no-repeat center center / cover;
+    margin-top: 225px;
+    padding-top: 72px;
+    padding-bottom: 85px;
+
+    @include mq("sp") {
+        margin-top: 96px;
+        padding-top: 57px;
+        padding-bottom: 57px;
+    }
+}
+
+.contact__form {
+    margin-top: 64px;
+    text-align: center;
+
+    @include mq("sp") {
+        margin-top: 33px;
+    }
+}
+
+.contact__text {
+    letter-spacing: 0.1em;
+    font-size: $fz-s;
+    text-align: center;
+
+    @include mq("sp") {
+        margin-top: 33px;
+    }
+}
+
+.contact__required-mark {
+    letter-spacing: 0.1em;
+    color: $font-input-required-color;
+    font-size: $fz-main;
+}
+
+.small {
+    font-size: $fz-xs;
+    vertical-align: super;
+    line-height: 1em;
+}
+
+.contact__form-items {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+
+    @include mq("sp") {
+        max-width: 320px;
+    }
+}
+
+.contact__item {
+    display: flex;
+
+    @include mq("sp") {
+        display: block;
+        text-align: left;
+
+        &:first-child {
+            margin-top: 32px;
+        }
+    }
+
+    &:first-child {
+        margin-top: 24px;
+    }
+
+    &:nth-child(n + 2) {
+        margin-top: 32px;
+    }
+
+    dt {
+        width: 174px;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 10px;
+        background-color: $bg-input-label-color;
+        position: relative;
+        @media all and (-ms-high-contrast: none) {
+            padding-top: 3px;
+        }
+
+        @include mq("sp") {
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -6px;
+            border-style: solid;
+            border-width: 20px 0 20px 6px;
+            border-color: transparent transparent transparent $bg-input-label-color;
+
+            @include mq("sp") {
+                display: none;
+            }
+        }
+
+        label {
+            font-size: $fz-m;
+            font-weight: bold;
+            color: #fff;
+
+            @include mq("sp") {
+                font-size: $fz-s;
+            }
+        }
+    }
+
+    dd {
+        @include mq("sp") {
+            margin-top: 3px;
+        }
+    }
+
+    .contact__name-label {
+        @include mq("sp") {
+            width: 83px;
+        }
+    }
+
+    .contact__mail-label {
+        @include mq("sp") {
+            width: 139px;
+        }
+    }
+
+    .contact__radio-label {
+        @include mq("sp") {
+            width: 146px;
+        }
+    }
+
+    .contact__textarea-label {
+        @include mq("sp") {
+            width: 155px;
+        }
+    }
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 320px;
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    box-shadow: 5px 5px 15px 0 $shadow-color;
+    margin-left: 23px;
+
+    @include mq("sp") {
+        margin-left: 0;
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+input[type="text"],
+input[type="email"] {
+    height: 40px;
+}
+
+textarea {
+    min-height: 122px;
+    resize: vertical;
+}
+
+.contact__radio-input {
+    display: inline-flex;
+    margin-left: 23px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 1px;
+    box-shadow: 5px 5px 15px 0 $shadow-color;
+
+    label {
+        position: relative;
+    }
+
+    @include mq("sp") {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    input[type="radio"] {
+        position: absolute; //position: absolute;で浮かして端に寄せてopacityで存在を透明化させる！！
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        + span {
+            display: block;
+            color: $main-color;
+            height: 38px;
+            line-height: 38px;
+            width: 79px;
+            @media all and (-ms-high-contrast: none) {
+                padding-top: 3px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &:checked {
+            + span {
+                background-color: $main-color;
+                color: #fff;
+                border-radius: 1px;
+            }
+        }
+
+        &:focus {
+            + span {
+                outline: -webkit-focus-ring-color auto 1px; // タブ押した時に枠線がつくように！！（他のinputタグにはついている）
+            }
+        }
+    }
+}
+
+.contact__check {
+    margin-top: 30px;
+
+    @include mq("sp") {
+        margin-top: 24px;
+    }
+
+    label {
+        position: relative;
+    }
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    + span {
+        cursor: pointer;
+        display: inline-block; // spanが元々インライン要素で高さや幅を指定出来ないから
+        position: relative;
+        padding: 0 0 0 30px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY((-50%));
+            left: 0;
+            width: 22px;
+            height: 22px;
+            display: block;
+            border: 1px solid $main-color;
+            background-color: #fff;
+            transition: all 0.3s ease 0s;
+        }
+    }
+
+    &:checked {
+        + span {
+            &::before {
+                border-top-color: transparent;
+                border-left-color: transparent;
+                width: 11px;
+                height: 22px;
+                left: 3px;
+                top: -8px;
+                background-color: transparent;
+                transform: rotate(45deg);
+            }
+        }
+
+        &:focus {
+            + span {
+                &::before {
+                    outline: none; // タブ押した時にチェックマークからは枠線が外れるように
+                }
+            }
+        }
+    }
+
+    &:focus {
+        + span {
+            &::before {
+                outline: -webkit-focus-ring-color auto 1px; // タブ押した時に枠線がつくように！！（他のinputタグにはついている）
+            }
+        }
+    }
+}
+
+.contact__check-link {
+    text-decoration: underline solid $main-color;
+    color: $main-color;
+}
+
+.contact-message {
+    text-align: center;
+    margin-top: 60px;
+    display: none;
+
+    &.-error {
+        color: #f00;
+    }
+}

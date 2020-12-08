@@ -1,0 +1,54 @@
+/*=======================
+Concept
+====================== */
+.concept__wrapper {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+
+    @include mq("sp") {
+        display: block;
+        margin-top: 48px;
+    }
+}
+
+.concept__img {
+    width: 50%;
+    max-width: 600px;
+
+    @include mq("sp") {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.concept__contents {
+    padding-left: 80px;
+    width: 50%;
+
+    @include mq("sp") {
+        width: 100%;
+        max-width: 600px;
+        padding-left: 0;
+        margin: 0 auto;
+    }
+}
+
+.concept__ttl {
+    font-size: $fz-l;
+    line-height: (34 / 20);
+    font-weight: bold;
+
+    @include mq("sp") {
+        margin-top: 40px;
+    }
+}
+
+.concept__txt {
+    line-height: (27 / 16);
+    margin-top: 48px;
+
+    @include mq("sp") {
+        margin-top: 32px;
+    }
+}

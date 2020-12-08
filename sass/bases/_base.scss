@@ -1,0 +1,44 @@
+/*=======================
+Base
+====================== */
+body {
+    font-family: $ff-main;
+    font-size: $fz-main;
+    color: $font-color;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    transition: all 0.3s ease 0s;
+    color: $font-color;
+}
+
+section {
+    padding-top: 160px; //適宜指定
+
+    @include mq("sp") {
+        padding-top: 96px; //適宜指定
+    }
+}
+
+.is-pc {
+    display: block;
+}
+
+.is-sp {
+    display: none;
+}
+
+@include mq("sp") {
+    .is-pc {
+        display: none;
+    }
+
+    .is-sp {
+        display: block;
+    }
+}

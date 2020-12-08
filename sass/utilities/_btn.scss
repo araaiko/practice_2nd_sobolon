@@ -1,0 +1,38 @@
+/*=======================
+Button
+====================== */
+.util-btn {
+    display: block;
+    width: 157px;
+    height: 46px;
+    background-color: #fff;
+    border: 1px solid $main-color;
+    font-size: $fz-s;
+    color: $main-color;
+    margin: 48px auto 0;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        background-color: $main-color;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.contact__btn {
+    margin-top: 48px;
+
+    @include mq("sp") {
+        margin-top: 26px;
+    }
+
+    &.-active {
+        color: #fff;
+        background-color: $main-color;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: $main-color;
+    }
+}
