@@ -1,2 +1,2 @@
 # practice_2nd_sobolon
-（課題）sobolon様のサイトをデザインカンプからコーディング
+（サンプル）sobolon様のサイトをデザインカンプからコーディング
